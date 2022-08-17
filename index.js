@@ -4,11 +4,12 @@ const app = express();
 const port = 3001;
 
 app.get("/api/joke", (req, res) => {
-  
-    const options = {
-        method: 'GET',
-        url: 'https://dad-jokes.p.rapidapi.com/random/joke',
-        headers: {
+  try {
+
+      const options = {
+          method: 'GET',
+          url: 'https://dad-jokes.p.rapidapi.com/random/joke',
+            headers: {
             'X-RapidAPI-Key': '0a532778f1mshcb21fbf60fd9551p13eebajsn5e929d80bd2d',
             'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
         }
@@ -21,14 +22,22 @@ app.get("/api/joke", (req, res) => {
     }).catch(function (error) {
         console.error(error);
     });
+} catch(error) {
+    console.log(error);
+
+}
 })
 
 
-app.get("/api/:test", (req, res) => {
-    https://dad-jokes.p.rapidapi.com/random/joke
-    req.params.test
-    console.log("TESTING...")
-    res.send('api'); // för text.
+app.get("/api/:test", async (req, res) => {
+    try {
+        const resp = await axios.get("https://dad-jokes.p.rapidapi.com/random/joke")
+        req.params.test
+        console.log("TESTING...")
+        res.send('api'); // för text.
+    } catch {
+        console.log(error.err)
+    }
     // res.json för object.
 })
 // .then väntar på svar innan de skickar svar.
