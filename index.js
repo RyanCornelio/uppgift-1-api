@@ -2,6 +2,9 @@ import express from 'express';
 import axios from "axios";
 const app = express();
 const port = 3001;
+import cors from "cors";
+
+app.use(cors()); // Help to set apart ports... Kinda...
 
 app.get("/api/joke", (req, res) => {
   try {
