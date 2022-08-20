@@ -3,3 +3,7 @@ GET http://localhost:3001/api/test
 ###
 
 GET http://localhost:3001/api/joke
+
+###
+
+POST http://localhost:3001/comedians

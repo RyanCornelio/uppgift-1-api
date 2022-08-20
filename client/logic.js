@@ -18,9 +18,6 @@ async function tellMeAJoke() {
     
 }
 
-
-/* btn.addEventListener("click").addEventListener(tellMeAJoke()) */
-
 window.addEventListener("load", tellMeAJoke);
 
 

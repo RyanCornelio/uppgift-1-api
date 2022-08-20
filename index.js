@@ -3,6 +3,7 @@ import axios from "axios";
 const app = express();
 const port = 3001;
 import cors from "cors";
+import { nanoid } from 'nanoid'
 
 app.use(cors()); // Help to set apart ports... Kinda...
 
@@ -44,6 +45,31 @@ app.get("/api/:test", async (req, res) => {
     // res.json för object.
 })
 // .then väntar på svar innan de skickar svar.
+
+let comedians = [
+    {
+        id: nanoid(),
+        name: "Dave Chappelle",
+    },
+    {
+        id: nanoid(),
+        name: "Bill Burr",
+    },
+    {
+        id: nanoid(),
+        name: "Kat Williams",
+    },
+];
+
+app.use(express.json());
+app.use("/", express.static("client"))
+
+app.post("/comedians", ( req, res ) => {
+    console.log(req.body)
+    res.json({})
+})
+
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
