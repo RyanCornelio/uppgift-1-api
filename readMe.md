@@ -11,3 +11,9 @@ Använder detta API: https://rapidapi.com/KegenGuyll/api/dad-jokes/pricing
 Ta bort node-modules när du lämnar in.
 
 Static files?
+
+<!-- Lägg in router -->
+
+1. Antal API anrop uppnått...
+2. Få egna API till sidan...
+3. POST request funkar inte...

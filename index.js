@@ -6,6 +6,7 @@ import cors from "cors";
 import { nanoid } from 'nanoid'
 
 app.use(cors()); // Help to set apart ports... Kinda...
+app.use(express.json())
 
 app.get("/api/joke", (req, res) => {
   try {
@@ -50,16 +51,31 @@ let comedians = [
     {
         id: nanoid(),
         name: "Dave Chappelle",
+        age: 40
     },
     {
         id: nanoid(),
         name: "Bill Burr",
+        age: 42
     },
     {
         id: nanoid(),
         name: "Kat Williams",
+        age: 34
     },
 ];
+
+app.get("/comedians", (req, res) => {
+    res.json(comedians)
+})
+
+app.post("/", (req, res) => {
+    if(!req.body || !req.body.name || !req.body.age) {
+        throw new Error("No user info...")
+    }
+    
+    req.json({status: "New user added!"})
+});
 
 app.use(express.json());
 app.use("/", express.static("client"))

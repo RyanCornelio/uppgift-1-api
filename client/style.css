@@ -48,3 +48,19 @@ footer
 }
 
 
+.addComedian 
+{   
+    width: 190px;
+    margin: 10px;
+    height: 40px;
+    
+}
+
+.tellJoke
+{
+    width: 200px;
+    height: 40px;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 10px;
+}
