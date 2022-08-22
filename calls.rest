@@ -25,6 +25,6 @@ POST http://localhost:3001/comedians
 Content-Type: "application/json"
 
 {
-    "name": "Dave chappelle",
+    "name": "Bert chappelle",
     "age": 29
 }

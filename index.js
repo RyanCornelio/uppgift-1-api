@@ -84,8 +84,8 @@ app.use("/", express.static("client"))
 
 app.post("/comedians", ( req, res ) => {
     console.log(req.body)
-    
-    res.json({})
+    comedians.push({...req.body, ...{id: nanoid()}})
+    res.json({status: "New comedian added!"})
 })
 
 
