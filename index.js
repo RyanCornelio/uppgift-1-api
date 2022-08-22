@@ -70,11 +70,13 @@ app.get("/comedians", (req, res) => {
 })
 
 app.post("/", (req, res) => {
-    if(!req.body || !req.body.name || !req.body.age) {
-        throw new Error("No user info...")
+    try {
+        if(!req.body || !req.body.name || !req.body.age) {
+            throw new Error("No user info...")
+        }
+    } catch {   
+        req.json({status: "New user added!"})
     }
-    
-    req.json({status: "New user added!"})
 });
 
 app.use(express.json());
@@ -82,6 +84,7 @@ app.use("/", express.static("client"))
 
 app.post("/comedians", ( req, res ) => {
     console.log(req.body)
+    
     res.json({})
 })
 
