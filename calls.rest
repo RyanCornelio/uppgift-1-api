@@ -6,17 +6,6 @@ GET http://localhost:3001/api/joke
 
 ###
 
-
-POST http://localhost:3001/api/comedians
-Content-Type: "application/json"
-
-{
-    "id": 0,
-    "name": "Kevin Hart",
-}
-
-###
-
 GET http://localhost:3001/comedians
 
 ###
@@ -26,5 +15,5 @@ Content-Type: "application/json"
 
 {
     "name": "Bert chappelle",
-    "age": 29
+    "age": 20
 }

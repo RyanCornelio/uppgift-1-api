@@ -71,7 +71,7 @@ app.get("/comedians", (req, res) => {
 
 app.post("/", (req, res) => {
     try {
-        if(!req.body || !req.body.name || !req.body.age) {
+        if(!req.body || !req.body.name || !req.body.age ) {
             throw new Error("No user info...")
         }
     } catch {   

@@ -3,26 +3,28 @@ async function tellMeAJoke() {
 
     let response = await fetch("http://localhost:3001/api/joke");  // async await när du använder fetch...
     let result = await response.json(); // Får rätt datatyp...
+    /* getComedian = await fetch("http://localhost:3001/api/comedian") */
 
     const getJoke = document.getElementById("jokeSetup");
     const getJokePuncline = document.getElementById("jokePunchline");
+    const author = document.getElementById("comedian");
 
-   /*  const getComedian = async (event => {
+  /*   const getComedian = async (event => {
         try {
             const response = await fetch("http://localhost:3001/api/comedian");
             const body = await response.json()
         }
     }) */
 
-  /*   document.getElementById("addComedian").addEventListener() */
+    /* document.getElementById("addComedian").addEventListener() */
 
     getJoke.innerText = result.setup;
     getJokePuncline.innerText = result.punchline;
-
+    author.innerText = result.author;
 
     console.log(result.setup);
     console.log(result.punchline);
-    console.log(result.comedian);
+    console.log(result.author);
 
     console.log(result);
     console.log(response);
