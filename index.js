@@ -1,10 +1,11 @@
 import express from 'express';
 import axios from "axios";
-const app = express();
-const port = 3001;
 import cors from "cors";
 import { nanoid } from 'nanoid'
+const app = express();
+const port = 3001;
 
+app.use("/", express.static("client"))
 app.use(cors()); // Help to set apart ports... Kinda...
 app.use(express.json())
 
@@ -34,7 +35,7 @@ app.get("/api/joke", (req, res) => {
 })
 
 
-app.get("/api/:test", async (req, res) => {
+/* app.get("/api/:test", async (req, res) => {
     try {
         const resp = await axios.get("https://dad-jokes.p.rapidapi.com/random/joke")
         req.params.test
@@ -44,7 +45,7 @@ app.get("/api/:test", async (req, res) => {
         console.log(error.err)
     }
     // res.json för object.
-})
+}) */
 // .then väntar på svar innan de skickar svar.
 
 let comedians = [
@@ -65,11 +66,11 @@ let comedians = [
     },
 ];
 
-app.get("/comedians", (req, res) => {
+app.get("/api/comedians", (req, res) => {
     res.json(comedians)
 })
 
-app.post("/", (req, res) => {
+/* app.post("/", (req, res) => {
     try {
         if(!req.body || !req.body.name || !req.body.age ) {
             throw new Error("No user info...")
@@ -77,14 +78,14 @@ app.post("/", (req, res) => {
     } catch {   
         req.json({status: "New user added!"})
     }
-});
+}); */
 
-app.use(express.json());
-app.use("/", express.static("client"))
 
-app.post("/comedians", ( req, res ) => {
-    console.log(req.body)
-    comedians.push({...req.body, ...{id: nanoid()}})
+
+app.post("/api/comedians", ( req, res ) => {
+    console.log(('Hejsan'));
+    console.log("body", req.body)
+    comedians.push({...req.body, ...{id: nanoid()}}) // Få ut namn och ålder...
     res.json({status: "New comedian added!"})
 })
 

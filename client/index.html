@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dad jokes</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1 id="jokeSetup">Setup</h1>
-        <h1 id="jokePunchline">Punchline</h1>
-        <h2 id="comedian">Comedian</h2>
-        <button onclick="tellMeAJoke()" class="tellJoke">Tell joke 😉</button>
-        <button id="addComedian" onclick="addComedian()" class="tellJoke">Add comedian</button>
-        <input type="input" placeholder="Add comedian" class="tellJoke">
-        <script defer src="logic.js"></script>
-        <footer><h3>Made by Ryan Cornelio, WIE20G Medie Institutet, Göteborg.</h3></footer>
+      <h1 id="jokeSetup">Setup</h1>
+      <h1 id="jokePunchline">Punchline</h1>
+      <h2 id="comedian">Comedian</h2>
+      <button onclick="tellMeAJoke()" class="tellJoke">Tell joke 😉</button>
+
+      <form action="">
+          <h1 class="hallOfFame">Hall Of Fame 2022</h1>
+          <button id="btn" onclick="addToHallOfFame()" class="tellJoke">Add comedian</button> 
+          <input type="input" placeholder="Add name" class="tellJoke" /> 
+          <input type="input" placeholder="Add age" class="tellJoke" />
+
+            <ul id="listan">Listan här</ul>
+        
+        </form>
+      <script defer src="logic.js"></script>
+      <footer>
+          <h3>Made by Ryan Cornelio, WIE20G Medie Institutet, Göteborg.</h3>
+        </footer>
     </div>
-</body>
+  </body>
 </html>
