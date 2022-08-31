@@ -56,37 +56,11 @@ app.get("/api/comedians", (req, res) => {
     res.json(comedians)
 })
 
-/* app.post("/", (req, res) => {
-    try {
-        if(!req.body || !req.body.name || !req.body.age ) {
-            throw new Error("No user info...")
-        }
-    } catch {   
-        req.json({status: "New user added!"})
-    }
-}); */
-
-
-
 app.post("/api/comedians", ( req, res ) => {
 
-        res.json({status: "New comedian added!"})
-        comedians.push({...req.body.comedianToAdd, ...{id: nanoid()}}) // Få ut namn och ålder...
-       /*  comedians.push(req.body) */
-        res.json({ status: true })
+    comedians.push({...req.body, ...{id: nanoid()}}) 
+    res.json({status: "New comedian added!"})
 })
-
-
-/* app.post('/api', (req, res) => {
-    try {
-        console.log(req.body)
-        res.json({ status: true })
-    } catch (err) {
-        console.error(err)
-        res.json({ status: false })
-    }
-}) */
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

@@ -25,13 +25,9 @@ async function tellMeAJoke() {
     
     for (let index = 0; index < result.length; index++) {
         const comedian = result[index];
-        console.log(comedian.name);
-        // Skapa en div eller h1 och i den h1 eller div lägga till comedian.name
-        // som innertext...
-        // Appenda div eller h1 till list.
-        /*         author.innerText = result.author.name; */
+      
         let item = document.createElement("li")
-        item.innerText = comedian.name
+        item.innerText = comedian.name + " " + comedian.age + " years old";
         list.append(item)
         
     }
@@ -39,17 +35,17 @@ async function tellMeAJoke() {
 
     async function addToHallOfFame(e) {
 
-        e.preventDefault();
     const comedianToAdd = document.getElementById("name").value;
-    console.log(comedianToAdd);
-    /* const comedianAgeToAdd = document.getElementById("age").value; */
-    const btn = document.getElementById("btn");
+    const ageToAdd = document.getElementById("age").value
+/*     console.log(comedianToAdd); */
+    const newName = {name: comedianToAdd, age: ageToAdd}
+    console.log(newName);
     const status = await fetch("http://localhost:3001/api/comedians", {
         method: "POST", 
-        body: JSON.stringify({comedianToAdd}),
+        body: JSON.stringify(newName),
         headers: {"Content-Type": "application/json"}
     })
-    
+   /*  const result = await response.json(); */
 /*     let result = await response.json(comedian); */
     // Push?
 
