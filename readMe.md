@@ -7,3 +7,7 @@ Contribute to the list by adding your favorite comedian + age and pressing add.
 
 Find the repo here:
 https://github.com/RyanCornelio/uppgift-1-api
+
+I hope you will find some fun jokes!
+
+Thanks!
