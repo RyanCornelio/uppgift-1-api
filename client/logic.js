@@ -1,6 +1,6 @@
 async function tellMeAJoke() {
-    let response = await fetch("http://localhost:3001/api/joke");  // async await när du använder fetch...
-    let result = await response.json(); // Får rätt datatyp...
+    let response = await fetch("http://localhost:3001/api/joke");  
+    let result = await response.json(); 
 
     console.log(result)
     const getJoke = document.getElementById("jokeSetup");
@@ -45,19 +45,11 @@ async function tellMeAJoke() {
         body: JSON.stringify(newName),
         headers: {"Content-Type": "application/json"}
     })
-   /*  const result = await response.json(); */
-/*     let result = await response.json(comedian); */
-    // Push?
 
-    /* document.getElementById("listan").innerHTML = inputValue; */
-    // Svaret jag får av servern och spara... Logga ut på klienten...
 }
-
 
 window.addEventListener("load", getHallOfFame , tellMeAJoke);
 document.getElementById('btn').addEventListener('click', addToHallOfFame)
-
-// Spara, hämta, 
 
 
 

@@ -14,14 +14,11 @@ body
     display: flex;
     flex-direction: column;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
 }
 .container
 {
     display: table-cell;
     vertical-align: middle;
-/*     height: 100vh; */
-
 }
 
 #jokeSetup

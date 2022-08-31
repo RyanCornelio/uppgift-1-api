@@ -1,26 +1,6 @@
-För att starta: nodemon index.js
+Title: Dad Joke Api.
+The API im using here is the following: https://rapidapi.com/KegenGuyll/api/dad-jokes/pricing
 
-Använder detta API: https://rapidapi.com/KegenGuyll/api/dad-jokes/pricing
+To start the project run: nodemon index.js
 
-1. Vad saknas på min request? Behöver jag global variabel?
-2. Hur får jag loggen i terminalen?
-3. API kod läggs i server fil eller klient fil?
-4. Vad e axios?
-5. Request på URL?
-
-Ta bort node-modules när du lämnar in.
-
-Static files?
-
-<!-- Lägg in router -->
-
-1. Antal API anrop uppnått...
-2. Få egna API till sidan...
-3. POST request funkar inte...
-
-4. Bara id kommer med i post request...
-5. Funktion för att visa comedian?
-6. Listan försvinner.
-
-// Skriva in namn och ålder i inputfält. Spara till ett object och skicka till
-server med post.
+Contribute to the list by adding your favorite comedian + age and pressing add.

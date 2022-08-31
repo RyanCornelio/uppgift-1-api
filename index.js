@@ -6,7 +6,7 @@ const app = express();
 const port = 3001;
 
 app.use("/", express.static("client"))
-app.use(cors()); // Help to set apart ports... Kinda...
+app.use(cors());
 app.use(express.json())
 
 app.get("/api/joke", (req, res) => {
