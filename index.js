@@ -34,20 +34,6 @@ app.get("/api/joke", (req, res) => {
 }
 })
 
-
-/* app.get("/api/:test", async (req, res) => {
-    try {
-        const resp = await axios.get("https://dad-jokes.p.rapidapi.com/random/joke")
-        req.params.test
-        console.log("TESTING...")
-        res.send('api'); // för text.
-    } catch {
-        console.log(error.err)
-    }
-    // res.json för object.
-}) */
-// .then väntar på svar innan de skickar svar.
-
 let comedians = [
     {
         id: nanoid(),
@@ -83,12 +69,23 @@ app.get("/api/comedians", (req, res) => {
 
 
 app.post("/api/comedians", ( req, res ) => {
-    console.log(('Hejsan'));
-    console.log("body", req.body)
-    comedians.push({...req.body, ...{id: nanoid()}}) // Få ut namn och ålder...
-    res.json({status: "New comedian added!"})
+
+        res.json({status: "New comedian added!"})
+        comedians.push({...req.body.comedianToAdd, ...{id: nanoid()}}) // Få ut namn och ålder...
+       /*  comedians.push(req.body) */
+        res.json({ status: true })
 })
 
+
+/* app.post('/api', (req, res) => {
+    try {
+        console.log(req.body)
+        res.json({ status: true })
+    } catch (err) {
+        console.error(err)
+        res.json({ status: false })
+    }
+}) */
 
 
 app.listen(port, () => {
