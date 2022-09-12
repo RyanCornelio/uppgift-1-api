@@ -4,7 +4,7 @@ body
     width:100%;
     min-height: 100vh;
     margin: 0 auto;
-    background-image: url("/images/road2.jpg");
+/*     background-image: url("/images/road2.jpg"); */
     background-size: cover;
     padding: 10% 0;
     text-align: center;
@@ -14,6 +14,7 @@ body
     display: flex;
     flex-direction: column;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #111;
 }
 .container
 {
